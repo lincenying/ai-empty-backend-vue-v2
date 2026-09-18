@@ -1,0 +1,91 @@
+/* 浏览器自带滚动条样式覆盖 */
+::-webkit-scrollbar {
+    /* 滚动条整体样式 */
+    width: 6px;
+
+    /* 高宽分别对应横竖滚动条的尺寸 */
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    background: rgb(124, 125, 128, 0.65) !important;
+
+    /* 滚动条里面小方块 */
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+
+    /* 滚动条里面轨道 */
+
+    /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    border-radius: 3px;
+}
+
+body {
+    // width: 100vw;
+    min-height: 100vh;
+
+    // overflow: hidden scroll;
+    font-size: 12px;
+    color: #202935;
+    background-color: #f3f5f7;
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+
+    a {
+        transition: color 0.3s;
+
+        &:hover {
+            color: #0d6efd;
+        }
+
+        &:active,
+        &:focus-visible,
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+#app {
+    display: block !important;
+    min-height: 100vh;
+}
+
+.scroll-none {
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0.9;
+}
+
+/* start--文本行数限制--start */
+.line-2,
+[line-2],
+.line-3,
+[line-3],
+.line-4,
+[line-4],
+.line-5,
+[line-5] {
+    word-break: break-all;
+    white-space: inherit !important;
+}
+
+/* end--文本行数限制--end */
