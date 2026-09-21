@@ -12,6 +12,15 @@
             </div>
 
             <div class="ml-auto flex items-center gap-1 sm:gap-2">
+                <UserDropdown v-if="isLoggedIn" />
+                <RouterLink
+                    v-else
+                    to="/login"
+                    class="rounded-full bg-primary-600 px-5 py-2 text-14px font-medium text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary-500 hover:shadow-card-hover"
+                >
+                    登录
+                </RouterLink>
+
                 <button
                     class="flex h-9 w-9 items-center justify-center rounded-lg text-slate-600 transition-colors hover:bg-slate-100 md:hidden"
                     aria-label="菜单"
@@ -36,12 +45,16 @@
 <script setup lang="ts">
 import { Close, Operation } from '@element-plus/icons-vue'
 import { useBranding } from '@/composables/use-branding'
+import { useAuthStore } from '@/stores/use-auth-store'
 import SiteNavLinks from './site-nav-links.vue'
+import UserDropdown from './user-dropdown.vue'
 
 /**
- * 全站一级导航：始终固定在页面顶部，不含登录用户信息
+ * 全站一级导航：始终固定在页面顶部，右侧展示登录用户信息
  */
+const authStore = useAuthStore()
 const { platformName, platformDesc, homeLogoUrl } = useBranding()
+const isLoggedIn = computed(() => authStore.isLoggedIn)
 const mobileOpen = shallowRef(false)
 </script>
 

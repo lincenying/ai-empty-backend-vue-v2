@@ -1,9 +1,19 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import emitter from '@/composables/emitter'
+import { useAuthStore } from '@/stores/use-auth-store'
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
+        {
+            path: '/login',
+            name: 'Login',
+            component: () => import('@/pages/login-page.vue'),
+            meta: {
+                title: '登录',
+                hidden: true,
+            },
+        },
         {
             path: '/',
             component: () => import('@/layouts/console-layout.vue'),
@@ -45,11 +55,25 @@ const router = createRouter({
 })
 
 // 路由跳转前的监听操作
-router.beforeEach((to) => {
+router.beforeEach(async (to) => {
     emitter.emit('nprogress-start', {
         type: 'router',
         url: to.path,
     })
+
+    const authStore = useAuthStore()
+    if (authStore.isLoggedIn && !authStore.user) {
+        try {
+            await authStore.fetchUserInfo()
+        }
+        catch {
+            await authStore.logout()
+        }
+    }
+
+    if (to.path === '/login' && authStore.isLoggedIn)
+        return { path: '/blank', replace: true }
+
     return true
 })
 

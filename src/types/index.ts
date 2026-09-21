@@ -1,3 +1,32 @@
+/** 角色：平台管理员 / 客户管理员 / 普通用户 */
+export type UserRole = 'platform_admin' | 'customer_admin' | 'ordinary_user'
+
+/** 当前登录用户 */
+export interface UserInfo {
+    id: string
+    /** 登录账号 */
+    username: string
+    /** 展示名 */
+    nickname: string
+    avatar: string
+    role: UserRole
+    roleName: string
+    orgName: string
+}
+
+/** 登录表单参数 */
+export interface LoginParams {
+    username: string
+    password: string
+    remember: boolean
+}
+
+/** 登录结果 */
+export interface LoginResult {
+    token: string
+    user: UserInfo
+}
+
 /** 通用状态 */
 export type CommonStatus
     = | 'active'
