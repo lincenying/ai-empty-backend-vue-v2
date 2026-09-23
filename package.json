@@ -2,7 +2,7 @@
   "name": "tk-tokens-cockpit",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@12.4.2",
+  "packageManager": "pnpm@12.5.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
     "@lincy/utils": "^0.7.3",
-    "element-plus": "^2.14.5",
+    "element-plus": "^2.14.6",
     "mitt": "^3.0.1",
     "nprogress": "^0.2.0",
     "ofetch": "^1.5.1",
@@ -25,10 +25,10 @@
     "vue-router": "^5.3.1"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.133",
+    "@iconify-json/lucide": "^1.2.136",
     "@lincy/eslint-config": "^8.0.1",
-    "@lincy/unocss-base-config": "^2.8.1",
-    "@types/node": "^26.6.1",
+    "@lincy/unocss-base-config": "^2.8.2",
+    "@types/node": "^26.6.2",
     "@types/nprogress": "^0.2.3",
     "@types/qs": "^6.15.1",
     "@unocss/eslint-plugin": "^66.10.5",
@@ -38,7 +38,7 @@
     "@vue-macros/define-props-refs": "^3.1.4",
     "@vue-macros/reactivity-transform": "^3.1.4",
     "@vueuse/core": "^15.0.0",
-    "eslint": "^10.10.0",
+    "eslint": "^10.11.0",
     "eslint-plugin-format": "^2.0.1",
     "postcss-px-to-viewport-8-plugin": "^1.2.5",
     "sass-embedded": "^1.104.1",
