@@ -57,10 +57,12 @@ class TimestampChecker {
     }
 
     /**
-     * 获取远程时间戳
+     * 获取远程时间戳，绕过磁盘缓存以免读到旧的 timestamp.json
      */
     private async fetchTimestamp(): Promise<string> {
-        const response = await fetch(this.API_URL)
+        const response = await fetch(`${this.API_URL}?t=${Date.now()}`, {
+            cache: 'no-store',
+        })
 
         if (!response.ok) {
             throw new Error(`HTTP错误: ${response.status}`)
