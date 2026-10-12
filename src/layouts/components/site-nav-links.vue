@@ -55,8 +55,8 @@ const navItems: NavItem[] = [
         match: (path: string) => path === '/' || path.startsWith('/blank'),
     },
     {
-        label: '天宽云',
-        path: 'https://tokens.tiankuan.com/#/',
+        label: 'MM小屋',
+        path: 'https://www.mmxiaowu.com/#/',
         external: true,
     },
 ]

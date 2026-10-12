@@ -30,7 +30,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         plugins: [
             ...Macros(),
             ...Components(),
-            UnoCSS(),
+            ...[UnoCSS()],
             ...(mode === 'development' ? [
                 Inspect(),
             ] : [

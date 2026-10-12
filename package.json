@@ -2,7 +2,7 @@
   "name": "ai-empty-backend-vue-v2",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@12.10.1",
+  "packageManager": "pnpm@12.11.2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -25,15 +25,15 @@
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.141",
+    "@iconify-json/lucide": "^1.2.142",
     "@lincy/eslint-config": "^8.0.1",
     "@lincy/stylelint-config": "^2.3.0",
     "@lincy/unocss-base-config": "^3.0.0",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "@types/nprogress": "^0.2.3",
     "@types/qs": "^6.15.1",
     "@unocss/eslint-plugin": "^66.10.5",
-    "@vitejs/plugin-vue": "^6.0.9",
+    "@vitejs/plugin-vue": "^6.0.10",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
     "@vue-macros/define-props": "^3.1.4",
     "@vue-macros/define-props-refs": "^3.1.4",
@@ -50,8 +50,8 @@
     "unplugin-icons": "^24.0.0",
     "unplugin-vue-components": "^32.1.0",
     "vite": "^8.3.4",
-    "vite-plugin-inspect": "^12.0.2",
+    "vite-plugin-inspect": "^12.1.0",
     "vite-plugin-progress": "^0.0.7",
-    "vue-tsc": "^3.3.12"
+    "vue-tsc": "^3.3.13"
   }
 }

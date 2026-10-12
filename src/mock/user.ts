@@ -11,7 +11,7 @@ const MOCK_USERS: Array<UserInfo & { password: string }> = [
         avatar: 'https://api.dicebear.com/9.x/notionists-neutral/svg?seed=admin&backgroundColor=dbeafe',
         role: 'platform_admin',
         roleName: '平台管理员',
-        orgName: '天宽云',
+        orgName: '驾驶舱',
     },
     {
         id: 'u_2001',

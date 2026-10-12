@@ -10,5 +10,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": ["vite.*.ts", "unocss.config.ts", "eslint.config.ts"]
+  "include": ["vite.*.ts", "unocss.config.ts", "eslint.config.ts", "stylelint.config.mjs"]
 }
