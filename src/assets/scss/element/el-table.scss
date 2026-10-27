@@ -1,0 +1,39 @@
+// 列表卡片用浅色底，白盒从表头里衬出来
+.base-table {
+    background: #fff;
+}
+
+// 表格本身是白色圆角盒；白边把表头从盒子边缘让开，避免和页面浅底连成一片
+.el-table.el-table {
+    --el-table-header-bg-color: #f9fafd;
+    --el-table-tr-bg-color: #fff;
+    --el-table-bg-color: #fff;
+
+    overflow: hidden;
+    background-color: #fff;
+    border: 10px solid #fff;
+    border-radius: 12px;
+
+    .el-table__inner-wrapper {
+        overflow: hidden;
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .el-table__header-wrapper {
+        background-color: transparent;
+    }
+
+    .el-table__header-wrapper .el-table__fixed-right-patch,
+    th.el-table__cell {
+        background-color: var(--el-table-header-bg-color);
+    }
+
+    thead tr:first-child th.el-table__cell:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    thead tr:first-child th.el-table__cell:last-child {
+        border-top-right-radius: 8px;
+    }
+}

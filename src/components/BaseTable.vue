@@ -1,6 +1,6 @@
 <template>
     <div
-        class="overflow-hidden rounded-2xl bg-white p-2 shadow-card"
+        class="base-table overflow-hidden rounded-2xl shadow-card"
         :class="{ 'flex h-full flex-col': Boolean(height || maxHeight) }"
     >
         <el-table
@@ -8,7 +8,7 @@
             :data="data"
             :height="height"
             :max-height="maxHeight"
-            style="width: 100%"
+            style="width: 100%;"
             @selection-change="(rows: T[]) => emit('selectionChange', rows)"
             @row-click="(row: T) => emit('rowClick', row)"
             @sort-change="(sort) => emit('sortChange', { prop: sort.prop ?? '', order: sort.order })"
@@ -45,7 +45,7 @@
             </template>
         </el-table>
 
-        <div v-if="pagination && total > 0" class="flex shrink-0 justify-end px-4 py-4">
+        <div v-if="pagination && total > 0" class="flex shrink-0 justify-end p-3">
             <el-pagination
                 v-model:current-page="page"
                 v-model:page-size="pageSize"
