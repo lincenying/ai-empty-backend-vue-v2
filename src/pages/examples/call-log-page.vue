@@ -20,9 +20,9 @@
                 start-placeholder="开始日期"
                 end-placeholder="结束日期"
                 value-format="YYYY-MM-DD"
-                class="shrink-0"
+                class="!w-260px flex-none"
             />
-            <el-select v-model="query.model" placeholder="模型" clearable filterable class="!w-52">
+            <el-select v-model="query.model" placeholder="模型" clearable filterable class="!w-200px flex-none">
                 <el-option
                     v-for="model in modelOptions"
                     :key="model.id"
@@ -30,7 +30,7 @@
                     :value="model.name"
                 />
             </el-select>
-            <el-select v-model="query.status" placeholder="调用状态" clearable class="!w-32">
+            <el-select v-model="query.status" placeholder="调用状态" clearable class="!w-160px flex-none">
                 <el-option label="成功" value="success" />
                 <el-option label="失败" value="failed" />
                 <el-option label="处理中" value="processing" />
@@ -39,7 +39,7 @@
                 v-model="billingFilter"
                 placeholder="计费模式"
                 clearable
-                class="!w-36"
+                class="!w-160px flex-none"
                 @change="handleBillingFilterChange"
             >
                 <el-option label="文本" value="text" />

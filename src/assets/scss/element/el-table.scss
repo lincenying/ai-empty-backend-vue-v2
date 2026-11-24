@@ -1,6 +1,18 @@
 // 列表卡片用浅色底，白盒从表头里衬出来
 .base-table {
     background: #fff;
+
+    // 空数据时 Element Plus 按表格外框宽度写死空状态，会比内容区宽出边框，从而出现横向滚动条
+    .el-table__body-wrapper:has(.el-table__empty-block) {
+        .el-scrollbar__view {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .el-table__empty-block {
+            width: 100% !important;
+        }
+    }
 }
 
 // 表格本身是白色圆角盒；白边把表头从盒子边缘让开，避免和页面浅底连成一片
