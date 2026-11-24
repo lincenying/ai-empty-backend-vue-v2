@@ -144,8 +144,22 @@ function buildMenuGroups(routes: RouteRecordRaw[]): MenuGroup[] {
     return result
 }
 
+/** 仅开发环境展示的侧边栏分组 */
+const DEV_ONLY_MENU_GROUPS = ['示例']
+
+/**
+ * 菜单是否展示该路由：示例分组仅在开发环境出现
+ */
+function isVisibleMenuRoute(item: RouteRecordRaw): boolean {
+    if (!item.meta?.title || item.meta.hidden)
+        return false
+    if (DEV_ONLY_MENU_GROUPS.includes(String(item.meta.group ?? '')) && import.meta.env.VITE_APP_ENV !== 'development')
+        return false
+    return true
+}
+
 const groups = computed<MenuGroup[]>(() => {
-    const menuRoutes = router.getRoutes().filter(item => item.meta?.title && !item.meta?.hidden)
+    const menuRoutes = router.getRoutes().filter(item => isVisibleMenuRoute(item))
     return buildMenuGroups(menuRoutes)
 })
 

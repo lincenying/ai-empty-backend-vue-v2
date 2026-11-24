@@ -4,12 +4,16 @@
   "private": true,
   "packageManager": "pnpm@12.11.2",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "cross-env DEV_PROXY=local vite",
+    "serve": "cross-env DEV_PROXY=remote vite",
+    "build_test": "vite build --mode test --emptyOutDir",
+    "build_prod": "vite build --emptyOutDir",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:ts": "vue-tsc -b --noEmit"
+    "lint:ts": "vue-tsc -b --noEmit",
+    "lint:css": "stylelint '**/*.{css,scss,vue}' --fix",
+    "prepare": "node scripts/git-hooks/install.mjs"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
@@ -39,6 +43,7 @@
     "@vue-macros/define-props-refs": "^3.1.4",
     "@vue-macros/reactivity-transform": "^3.1.4",
     "@vueuse/core": "^15.0.0",
+    "cross-env": "^10.1.0",
     "eslint": "^10.12.0",
     "eslint-plugin-format": "^2.0.1",
     "postcss-px-to-viewport-8-plugin": "^1.2.5",
